@@ -1,0 +1,13 @@
+{
+  "host": "smtp.mailgun.org",
+  "port": 465,
+  "user": "user",
+  "password": "pw",
+  "to": "test@test",
+  "from": "monitoring@test.mailgun.org",
+  "secureConnection": true,
+  
+  "threshold": 2,
+  "interval": 5000,
+  "url": "http://test.com"
+}

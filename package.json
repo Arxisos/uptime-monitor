@@ -1,0 +1,9 @@
+{
+  "name": "uptime-monitor",
+  "description": "Lightweight website monitoring and alerting",
+  "author": "Steffen Müller <arxisos@gmail.com",
+  "dependencies": {
+    "nodemailer": "0.7.0",
+    "request": "2.36.0"
+  }
+}
