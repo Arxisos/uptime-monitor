@@ -7,7 +7,7 @@
   "from": "monitoring@test.mailgun.org",
   "secureConnection": true,
   
-  "threshold": 2,
+  "threshold": 2, 
   "interval": 5000,
-  "url": "http://test.com"
+  "url": [ "http://test.com", "http://test2.com" ]
 }
