@@ -6,17 +6,7 @@ var request = require('request');
 var nodemailer = require('nodemailer');
           
 var config = require('./config.json');
-
-console.assert(config.host, 'host required');
-console.assert(config.port, 'port required');
-console.assert(config.user, 'user required');
-console.assert(config.password, 'password required');
-console.assert(config.to, 'to required');
-console.assert(config.from, 'from required');
-console.assert(typeof config.secureConnection != 'undefined', 'secureConnection required');
-console.assert(config.interval);
-console.assert(config.threshold);
-console.assert(config.url);
+require('./lib/config.js').validate(config);
 
 function sendMail(subject, text) {
   var transport = nodemailer.createTransport('SMTP', {
@@ -109,4 +99,6 @@ function start(url, interval, threshold) {
   daemonize(ctx, interval);
 }
 
-start(config.url, config.interval, config.threshold);
+config.url.forEach(function(url) {
+  start(url, config.interval, config.threshold);
+});
